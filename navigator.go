@@ -59,11 +59,10 @@ func NewNavigationItem(path string, handle func(Navigator, interface{}) (fyne.Wi
 
 type NavigationContainer struct {
 	widget.BaseWidget
-	BeforeEnter  func(to string) error
-	routes       map[string]NavigationHandler
-	history      []fyne.Widget
-	currentPage  fyne.Widget
-	currentePath string
+	BeforeEnter func(to string) error
+	routes      map[string]NavigationHandler
+	history     []fyne.Widget
+	currentPage fyne.Widget
 }
 
 func NewNavigationContainer(initialPath string, items ...*NavigationItem) (*NavigationContainer, error) {
